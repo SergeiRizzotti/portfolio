@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Portfolio</title>
+	<link href="css/style.css" rel="stylesheet" />
+</head>
+
+<!-- <body class="home-page"> -->
+
+<body class="home-page">
+	<div id="preloader">
+		<div class="preloader__title">LOADING</div>
+	</div>
+	<!-- <div class="cursor" id="cursor"></div>
+    <div class="cursor2" id="cursor2"></div>
+    <div class="cursor3" id="cursor3"></div> -->
+	<header class="header">
+		<div class="container-fluid">
+			<div class="header__inner">
+				<div class="header__left">
+					<div class="logo" id="logo">
+						<a href="index.html">
+							Noah Bradley
+						</a>
+					</div>
+				</div>
+				<div class="header__right">
+					<div class="header__right-inner">
+						<nav class="menu">
+							<ul>
+								<li><a class="item" href="index.html">Home</a></li>
+								<li><a class="item" href="about.html">About</a></li>
+								<li><a class="item" href="gallery.html">Gallery</a></li>
+								<li><a class="item" href="contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<div class="icon-search hover-target"></div>
+						<div class="menu-btn">
+							<div class="menu-btn__inner">
+								<div class="menu-btn__line"></div>
+								<div class="menu-btn__line width-smoll"></div>
+								<div class="menu-btn__line"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="home">
+		<div class="container-fluid">
+			<div class="home-block__hover">
+				<div class="home-block__item1" id="item1"></div>
+				<div class="home-block__item2" id="item2"></div>
+				<div class="home-block__item3" id="item3"></div>
+				<div class="home-block__item4" id="item4"></div>
+				<div class="home-block__item5" id="item5"></div>
+			</div>
+			<div class="home__inner">
+				<div class="home__content">
+					<div class="home__text">
+						<div class="home__text-top">
+							Noah Bradley
+						</div>
+						<div class="home__text-bottom">
+							Photographer
+						</div>
+					</div>
+					<div class="home__img home__img-slider">
+						<div class="slider-item">
+							<img src="images/home@2x.png" alt="" />
+						</div>
+						<div class="slider-item">
+							<img src="images/gallery.jpg" alt="" />
+						</div>
+						<div class="slider-item">
+							<img src="images/about.jpg" alt="" />
+						</div>
+						<div class="slider-item">
+							<img src="images/gallery.jpg" alt="" />
+						</div>
+						<div class="slider-item">
+							<img src="images/about.jpg" alt="" />
+						</div>
+					</div>
+				</div>
+				<div class="social-icons">
+					<div class="social-icons__inner">
+						<a href="#">
+							<div class="twitter hover-target"></div>
+						</a>
+						<a href="#">
+							<div class="instagram hover-target"></div>
+						</a>
+						<a href="#">
+							<div class="facebook hover-target"></div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="js/libs.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		paceOptions = {
+			ajax: true,
+			document: true,
+			eventLag: false,
+		}
+
+		Pace.on("done", function () {
+			$(".preloader__title")
+				.delay(200)
+				.animate({
+					top: "20%",
+					opacity: "0"
+				}, 1500, $.bez([0.19, 1, 0.22, 1]))
+
+			$("#preloader")
+				.delay(1000)
+				.animate({
+					top: "-120%"
+				}, 1000, $.bez([0.215, 0.61, 0.355, 1]))
+		})
+	</script>
+</body>
+
+</html>

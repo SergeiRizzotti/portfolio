@@ -1,0 +1,259 @@
+@media (max-width: 1680px) {
+	.header__inner {
+		height: 80px;
+	}
+	.menu a {
+		font-size: 11px;
+	}
+	.logo a {
+		font-size: 15px;
+	}
+	.home-block__item1,
+	.home-block__item2,
+	.home-block__item3,
+	.home-block__item4,
+	.home-block__item5 {
+		top: 80px;
+	}
+	.home__content {
+		font-size: 60px;
+	}
+	.home__img {
+		height: 350px;
+		width: 535px;
+	}
+	.home__img img {
+		height: 350px;
+		width: 535px;
+	}
+	.home__img-slider .slider-item {
+		height: 350px;
+	}
+	.twitter::before,
+	.instagram::before,
+	.facebook::before {
+		font-size: 15px;
+	}
+}
+@media (max-width: 1040px) {
+	.home-block__hover {
+		display: none;
+	}
+	.header__inner {
+		height: 70px;
+	}
+	.menu a {
+		font-size: 10px;
+	}
+	.logo a {
+		font-size: 14px;
+	}
+	.twitter::before,
+	.instagram::before,
+	.facebook::before {
+		font-size: 13px;
+	}
+	.twitter:hover,
+	.instagram:hover,
+	.facebook:hover {
+		border: 1px solid transparent;
+	}
+	.menu a:hover::before {
+		width: 0;
+	}
+}
+@media (max-width: 960px) {
+	.home__content {
+		font-size: 50px;
+		margin-top: 15vh;
+	}
+	.menu a {
+		font-size: 17px;
+	}
+	.container-fluid {
+		padding: 0px 30px;
+	}
+	.menu {
+		display: none;
+	}
+	.menu-btn {
+		display: block;
+		padding: 20px 10px;
+		top: 35px;
+		transition: all 0.4s;
+		&.active {
+			.width-smoll {
+				height: 0;
+				margin: 0;
+				opacity: 0;
+				width: 0;
+			}
+			.menu-btn__line {
+				background-color: $white;
+				transition: all 0.4s;
+			}
+			.menu-btn__line:first-child {
+				transform: rotate(-45deg) translateY(1px);
+			}
+			.menu-btn__line:last-child {
+				margin-top: 0;
+				transform: rotate(45deg) translateY(-2px);
+			}
+		}
+		.menu-btn__line {
+			transition: all 0.4s;
+		}
+		.menu-btn__line:first-child {
+			transform: rotate(0);
+		}
+		.menu-btn__line:last-child {
+			transform: rotate(0);
+		}
+	}
+	.icon-search {
+		margin-right: 70px;
+		padding-left: 0;
+	}
+	.menu {
+		align-items: center;
+		background-color: rgba($black, 0.9);
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		left: 0;
+		opacity: 0.5;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transform: translateY(-100%);
+		transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+		transition: all 0.5s;
+		z-index: 22;
+		& .item {
+			color: $white;
+		}
+		&.active {
+			opacity: 1;
+			transform: translateY(0%);
+		}
+	}
+	.menu ul {
+		align-content: space-around;
+		flex-direction: column;
+		height: 50vh;
+	}
+	.menu li + li {
+		margin-left: 0;
+	}
+}
+@media (max-width: 650px) {
+	.home-page .pace {
+		width: 300px;
+	}
+	.header__inner {
+		height: 50px;
+	}
+	.container-fluid {
+		padding: 0px 15px;
+	}
+	.menu-btn {
+		padding: 10px;
+		right: 10px;
+		top: 26px;
+	}
+	.home__content {
+		font-size: 33px;
+		margin-top: 7vh;
+	}
+	.home__img {
+		height: 180px;
+		width: 350px;
+	}
+	.home__img img {
+		height: 180px;
+		width: 350px;
+	}
+	.home__img-slider .slider-item {
+		height: 200px;
+	}
+	.social-icons {
+		padding-top: 0;
+	}
+	.social-icons__inner {
+		flex-direction: column;
+		position: absolute;
+		right: -7px;
+		top: -180px;
+	}
+}
+@media (max-width: 479px) {
+	.menu-btn {
+		padding: 10px;
+		right: 10px;
+		top: 26px;
+	}
+	.header__inner {
+		height: 50px;
+	}
+	.home__content {
+		font-size: 40px;
+		margin-top: 10vh;
+	}
+	.home__img {
+		width: 390px;
+	}
+	.home__img img {
+		width: 390px;
+	}
+	.social-icons {
+		padding-top: 8vh;
+	}
+	.social-icons__inner {
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		position: static;
+	}
+}
+@media (max-width: 400px) {
+	.home-page .pace {
+		width: 250px;
+	}
+	.home__content {
+		font-size: 33px;
+		margin-top: 9vh;
+	}
+	.home__img {
+		height: 330px;
+		width: 300px;
+	}
+	.home__img img {
+		height: 330px;
+		width: 300px;
+	}
+	.home__img-slider .slider-item {
+		height: 330px;
+	}
+}
+@media (max-width: 320px) {
+	.home__content {
+		font-size: 29px;
+	}
+	.home__img {
+		height: 290px;
+		width: 250px;
+	}
+	.home__img img {
+		height: 290px;
+		width: 250px;
+	}
+	.home__img-slider .slider-item {
+		height: 290px;
+	}
+}
+
+// 1. Смартфон в вертикальном положении (320-400)
+// 2. Смартфон на боку (480 - 650)
+// 3. Планшет в вертикально положении (768)
+// 4. Планшет на боку (1024)
+// 5. Десктоп (обычно 1200 и 1600).
