@@ -8,34 +8,39 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="page__gallery-list">
 	<!-- <div class="cursor" id="cursor"></div>
 	<div class="cursor2" id="cursor2"></div>
 	<div class="cursor3" id="cursor3"></div> -->
-	<header class="header animated fadeIn slow">
+	<header class="header">
 		<div class="container-fluid">
 			<div class="header__inner">
 				<div class="header__left">
-					<div class="logo">
+					<div class="logo" id="logo">
 						<a href="index.html">
 							Noah Bradley
 						</a>
 					</div>
 				</div>
 				<div class="header__right">
-					<nav class="menu">
-						<div class="menu__inner">
+					<div class="header__right-inner">
+						<nav class="menu">
 							<ul>
+								<li><a class="item" href="index.html">Home</a></li>
 								<li><a class="item" href="about.html">About</a></li>
 								<li><a class="item" href="gallery.html">Gallery</a></li>
 								<li><a class="item" href="contact.html">Contact</a></li>
-								<!-- <li class="icon-search hover-target"> -->
-								<li>
-									
-								</li>
 							</ul>
+						</nav>
+						<div class="icon-search hover-target"></div>
+						<div class="menu-btn">
+							<div class="menu-btn__inner">
+								<div class="menu-btn__line"></div>
+								<div class="menu-btn__line width-smoll"></div>
+								<div class="menu-btn__line"></div>
+							</div>
 						</div>
-					</nav>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -43,8 +48,8 @@
 	<section class="gallery-list">
 		<div class="gallery-list__inner">
 			<div class="gallery-list__btn">
-				<a href="/gallery.html" class="gallery__btn-catalog"></a>
-				<a href="/gallery-list.html" class="gallery__btn-list"></a>
+				<a href="gallery.html" class="gallery__btn-catalog"></a>
+				<!-- <a href="/gallery-list.html" class="gallery__btn-list"></a> -->
 			</div>
 			<div class="gallery-list__items">
 				<div class="gallery-list__item-1">

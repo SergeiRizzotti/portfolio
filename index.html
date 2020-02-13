@@ -6,9 +6,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Portfolio</title>
 	<link href="css/style.css" rel="stylesheet" />
-</head>
+	<script>
+		var vh = window.innerHeight * 0.01;
 
-<!-- <body class="home-page"> -->
+		document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+		window.addEventListener("resize", () => {
+			var vh = window.innerHeight * 0.01;
+
+			document.documentElement.style.setProperty("--vh", `${vh}px`);
+		});
+	</script>
+</head>
 
 <body class="home-page">
 	<div id="preloader">

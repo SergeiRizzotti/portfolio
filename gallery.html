@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portfolio</title>
 	<link href="css/style.css" rel="stylesheet">
+	<script>
+		var vh = window.innerHeight * 0.01;
+
+		document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+		window.addEventListener("resize", () => {
+			var vh = window.innerHeight * 0.01;
+
+			document.documentElement.style.setProperty("--vh", `${vh}px`);
+		});
+	</script>
 </head>
+
 <body>
 	<!-- <div class="cursor" id="cursor"></div>
 	<div class="cursor2" id="cursor2"></div>
 	<div class="cursor3" id="cursor3"></div> -->
-	<header class="header animated fadeIn slow">
+	<header class="header">
 		<div class="container-fluid">
 			<div class="header__inner">
 				<div class="header__left">
-					<div class="logo">
+					<div class="logo" id="logo">
 						<a href="index.html">
 							Noah Bradley
 						</a>
 					</div>
 				</div>
 				<div class="header__right">
-					<nav class="menu">
-						<div class="menu__inner">
+					<div class="header__right-inner">
+						<nav class="menu">
 							<ul>
+								<li><a class="item" href="index.html">Home</a></li>
 								<li><a class="item" href="about.html">About</a></li>
 								<li><a class="item" href="gallery.html">Gallery</a></li>
 								<li><a class="item" href="contact.html">Contact</a></li>
-								<li class="icon-search hover-target"></li>
 							</ul>
+						</nav>
+						<div class="icon-search hover-target"></div>
+						<div class="menu-btn">
+							<div class="menu-btn__inner">
+								<div class="menu-btn__line"></div>
+								<div class="menu-btn__line width-smoll"></div>
+								<div class="menu-btn__line"></div>
+							</div>
 						</div>
-					</nav>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -61,11 +82,9 @@
 				</div>
 			</div>
 			<div class="gallery__content">
-				<a href="/gallery.html" class="gallery__btn-catalog animated fadeIn faster"></a>
-				<a href="/gallery-list.html" class="gallery__btn-list animated fadeIn faster"></a>
-				<div class="gallery__title animated fadeInUp slow">
-					Gallery
-				</div>
+				<!-- <a href="/gallery.html" class="gallery__btn-catalog animated fadeIn faster"></a> -->
+				<a href="gallery-list.html" class="gallery__btn-list animated fadeIn faster"></a>
+				<div class="gallery__title animated fadeInUp slow">Gallery</div>
 				<div class="gallery__title-slider">
 					<div class="gallery__title-item">
 						<div class="title animated fadeInUp slow">Budapest</div>
@@ -132,27 +151,13 @@
 					</div>
 				</div>
 				<div class="gallery__nav-slider">
-					<div class="gallery__nav-item">
-						<img src="images/slider-nav.jpg" alt="">
-					</div>
-					<div class="gallery__nav-item">
-						<img src="images/slider-nav.jpg" alt="">
-					</div>
-					<div class="gallery__nav-item">
-						<img src="images/slider-nav.jpg" alt="">
-					</div>
-					<div class="gallery__nav-item">
-						<img src="images/slider-nav.jpg" alt="">
-					</div>
-					<div class="gallery__nav-item">
-						<img src="images/slider-nav.jpg" alt="">
-					</div>
-					<div class="gallery__nav-item">
-						<img src="images/slider-nav.jpg" alt="">
-					</div>
-					<div class="gallery__nav-item">
-						<img src="images/slider-nav.jpg" alt="">
-					</div>
+					<div class="gallery__nav-item" style="background-image: url(images/gallery@2x.jpg);"></div>
+					<div class="gallery__nav-item" style="background-image: url(images/gallery@2x.jpg);"></div>
+					<div class="gallery__nav-item" style="background-image: url(images/gallery@2x.jpg);"></div>
+					<div class="gallery__nav-item" style="background-image: url(images/gallery@2x.jpg);"></div>
+					<div class="gallery__nav-item" style="background-image: url(images/gallery@2x.jpg);"></div>
+					<div class="gallery__nav-item" style="background-image: url(images/gallery@2x.jpg);"></div>
+					<div class="gallery__nav-item" style="background-image: url(images/gallery@2x.jpg);"></div>
 				</div>
 			</div>
 		</div>
@@ -160,4 +165,5 @@
 	<script src="js/libs.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
+
 </html>

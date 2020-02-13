@@ -1,93 +1,16 @@
-// 'use strict';
-
-var args = {
-	frequency: 50, // ( How often the object sends the values - milliseconds )
-	gravityNormalized: true, // ( If the gravity related values to be normalized )
-	orientationBase: GyroNorm.GAME, // Can be GyroNorm.GAME or GyroNorm.WORLD. gn.GAME returns orientation values with respect to the head direction of the device. gn.WORLD returns the orientation values with respect to the actual north direction of the world.
-	decimalCount: 2, // ( How many digits after the decimal point will there be in the return values )
-	logger: null, // ( Function to be called to log messages from gyronorm.js )
-	screenAdjusted: false, // ( If set to true it will return screen adjusted values. )
-};
-
-var gn = new GyroNorm();
-
-gn.init()
-	.then(function () {
-		gn.start(function (data) {
-			// Process:
-			// data.do.alpha	( deviceorientation event alpha value )
-			// data.do.beta		( deviceorientation event beta value )
-			// data.do.gamma	( deviceorientation event gamma value )
-			// data.do.absolute	( deviceorientation event absolute value )
-			// data.dm.x		( devicemotion event acceleration x value )
-			// data.dm.y		( devicemotion event acceleration y value )
-			// data.dm.z		( devicemotion event acceleration z value )
-			// data.dm.gx		( devicemotion event accelerationIncludingGravity x value )
-			// data.dm.gy		( devicemotion event accelerationIncludingGravity y value )
-			// data.dm.gz		( devicemotion event accelerationIncludingGravity z value )
-			// data.dm.alpha	( devicemotion event rotationRate alpha value )
-			// data.dm.beta		( devicemotion event rotationRate beta value )
-			// data.dm.gamma	( devicemotion event rotationRate gamma value )
-		});
-	})
-	.catch(function (e) {
-		// Catch if the DeviceOrientation or DeviceMotion is not supported by the browser or device
+$(function () {
+	$(".menu-btn").on("click", function () {
+		$(".menu, .menu-btn").toggleClass("active");
 	});
-
-var vh = window.innerHeight * 0.01;
-
-document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-window.addEventListener("resize", () => {
-	var vh = window.innerHeight * 0.01;
-
-	document.documentElement.style.setProperty("--vh", `${vh}px`);
 });
 
 $(function () {
-	$(".gallery__title-slider").slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		asNavFor: ".gallery__nav-slider, .gallery__img-slider, .gallery__descriptor-slider",
-	});
-
-	$(".gallery__img-slider").slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		asNavFor: ".gallery__nav-slider, .gallery__title-slider, .gallery__descriptor-slider",
-	});
-
-	$(".gallery__descriptor-slider").slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		speed: 1,
-		cssEase: "linear",
-		arrows: false,
-		asNavFor: ".gallery__nav-slider, .gallery__title-slider, .gallery__img-slider",
-		fade: true,
-	});
-
-	$(".gallery__nav-slider").slick({
-		slidesToShow: 1,
-		dots: true,
-		slidesToScroll: 1,
-		// autoplay: true,
-		// autoplaySpeed: 5000,
-		// pauseOnDotsHover: true,
-		asNavFor: ".gallery__title-slider, .gallery__img-slider, .gallery__descriptor-slider",
-		prevArrow: '<button class="slider-arrows slider-arrows__left animated fadeInLeft delay-2s" type="button"><img src="images/prevArrow.svg" alt=""></img></button>',
-		nextArrow: '<button class="slider-arrows slider-arrows__right animated fadeInRight delay-2s" type="button"><img src="images/nextArrow.svg" alt=""></img></button>',
-		customPaging: (slider, i) => `<a>${"0" + (i + 1)}</a>`,
-	});
 
 	$(".home__img-slider").slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		speed: 1,
 		cssEase: "linear",
-		//speed: 100,
+		speed: 100,
 		fade: true,
 		arrows: false,
 	});
@@ -111,11 +34,46 @@ $(function () {
 	$("#item5").on("mouseover", function () {
 		$(".home__img-slider").slick("slickGoTo", 4);
 	});
-
-	$(".menu-btn").on("click", function () {
-		$(".menu, .menu-btn").toggleClass("active");
-	});
 });
+
+$(".gallery__title-slider").slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	asNavFor: ".gallery__nav-slider, .gallery__img-slider, .gallery__descriptor-slider",
+});
+
+$(".gallery__img-slider").slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	asNavFor: ".gallery__nav-slider, .gallery__title-slider, .gallery__descriptor-slider",
+});
+
+$(".gallery__descriptor-slider").slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	speed: 1,
+	cssEase: "linear",
+	arrows: false,
+	asNavFor: ".gallery__nav-slider, .gallery__title-slider, .gallery__img-slider",
+	fade: true,
+});
+
+$(".gallery__nav-slider").slick({
+	slidesToShow: 1,
+	dots: true,
+	slidesToScroll: 1,
+	// autoplay: true,
+	// autoplaySpeed: 5000,
+	// pauseOnDotsHover: true,
+	asNavFor: ".gallery__title-slider, .gallery__img-slider, .gallery__descriptor-slider",
+	prevArrow: '<button class="slider-arrows slider-arrows__left animated fadeInLeft delay-2s" type="button"><img src="images/prevArrow.svg" alt=""></img></button>',
+	nextArrow: '<button class="slider-arrows slider-arrows__right animated fadeInRight delay-2s" type="button"><img src="images/nextArrow.svg" alt=""></img></button>',
+	customPaging: (slider, i) => `<a>${"0" + (i + 1)}</a>`,
+});
+
+
 
 $(document).ready(function () {
 	$(".images-portfolio").magnificPopup({
@@ -138,88 +96,34 @@ $(document).ready(function () {
 	});
 });
 
+var event = ('ontouchstart' in window) ? 'click' : 'mouseenter mouseleave';
 
-$(".gallery-list__item-1").mouseenter(function () {
-	$(".gallery-list__item-1 .item__box")
-		.addClass("active")
-		.removeClass("disable");
-});
-$(".gallery-list__item-1").mouseleave(function () {
-	$(".gallery-list__item-1 .item__box")
-		.addClass("disable")
-		.removeClass("active");
+$(".gallery-list__item-1").on(event, function () {
+	$(".gallery-list__item-1 .item__box").toggleClass("active");
 });
 
-
-$(".gallery-list__item-2").mouseenter(function () {
-	$(".gallery-list__item-2 .item__box")
-		.addClass("active")
-		.removeClass("disable");
-});
-$(".gallery-list__item-2").mouseleave(function () {
-	$(".gallery-list__item-2 .item__box")
-		.addClass("disable")
-		.removeClass("active");
+$(".gallery-list__item-2").on(event, function () {
+	$(".gallery-list__item-2 .item__box").toggleClass("active");
 });
 
-
-$(".gallery-list__item-3").mouseenter(function () {
-	$(".gallery-list__item-3 .item__box")
-		.addClass("active")
-		.removeClass("disable");
-});
-$(".gallery-list__item-3").mouseleave(function () {
-	$(".gallery-list__item-3 .item__box")
-		.addClass("disable")
-		.removeClass("active");
+$(".gallery-list__item-3").on(event, function () {
+	$(".gallery-list__item-3 .item__box").toggleClass("active");
 });
 
-
-$(".gallery-list__item-4").mouseenter(function () {
-	$(".gallery-list__item-4 .item__box")
-		.addClass("active")
-		.removeClass("disable");
-});
-$(".gallery-list__item-4").mouseleave(function () {
-	$(".gallery-list__item-4 .item__box")
-		.addClass("disable")
-		.removeClass("active");
+$(".gallery-list__item-4").on(event, function () {
+	$(".gallery-list__item-4 .item__box").toggleClass("active");
 });
 
-
-$(".gallery-list__item-5").mouseenter(function () {
-	$(".gallery-list__item-5 .item__box")
-		.addClass("active")
-		.removeClass("disable");
-});
-$(".gallery-list__item-5").mouseleave(function () {
-	$(".gallery-list__item-5 .item__box")
-		.addClass("disable")
-		.removeClass("active");
+$(".gallery-list__item-5").on(event, function () {
+	$(".gallery-list__item-5 .item__box").toggleClass("active");
 });
 
-
-$(".gallery-list__item-6").mouseenter(function () {
-	$(".gallery-list__item-6 .item__box")
-		.addClass("active")
-		.removeClass("disable");
-});
-$(".gallery-list__item-6").mouseleave(function () {
-	$(".gallery-list__item-6 .item__box")
-		.addClass("disable")
-		.removeClass("active");
+$(".gallery-list__item-6").on(event, function () {
+	$(".gallery-list__item-6 .item__box").toggleClass("active");
 });
 
-
-$(".gallery-list__item-7").mouseenter(function () {
-	$(".gallery-list__item-7 .item__box")
-		.addClass("active")
-		.removeClass("disable");
-});
-$(".gallery-list__item-7").mouseleave(function () {
-	$(".gallery-list__item-7 .item__box")
-		.removeClass("active")
-		.addClass("disable");
+$(".gallery-list__item-7").on(event, function () {
+	$(".gallery-list__item-7 .item__box").toggleClass("active");
 });
 
 
